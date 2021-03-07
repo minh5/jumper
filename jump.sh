@@ -1,4 +1,4 @@
-function jumper() {
+function jump() {
     local JUMP
     JUMP="$GOPATH/bin/jumper"
 
