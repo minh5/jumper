@@ -1,18 +1,15 @@
 package main
 
 import "fmt"
+import "log"
 import "os"
-import "os/exec"
 
 func main() {
 	val, err := os.LookupEnv("JUMP_TO")
 
 	if !err {
 		fmt.Println("Please set JUMP_TO")
-		return
+		log.Fatal(err)
 	}
-	cmd := exec.Command("cd")
-	cmd.Dir = val
-	cmd.Run()
-	fmt.Println("Jumped to", val)
+	fmt.Println("Jumping to", val)
 }
